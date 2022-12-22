@@ -73,7 +73,7 @@ public class Order {
                                 break;
 
                             case 2:
-                                addDrinkPrice("pepsi");
+                                addDrinkPrice("cocaCola");
                                 break;
 
                             case 3:

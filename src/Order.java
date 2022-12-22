@@ -36,26 +36,19 @@ public class Order {
                         switch (input) {
                             case 1:
                                 addHamburgerPrice("cheeseburger");
-                                hamburger.getOverallPrice();
-                                this.price += hamburger.getPrice();
                                 break;
 
                             case 2:
                                 addHamburgerPrice("bacon");
-                                hamburger.getOverallPrice();
-                                this.price += hamburger.getPrice();
                                 break;
 
                             case 3:
                                 hamburger = new DeluxeBurger();
-                                hamburger.getOverallPrice();
-                                this.price += hamburger.getPrice();
+                                addDeluxeHamburgerPrice();
                                 break;
 
                             case 4:
                                 addHamburgerPrice("basic");
-                                hamburger.getOverallPrice();
-                                this.price += hamburger.getPrice();
                                 break;
 
                             default:
@@ -125,6 +118,11 @@ public class Order {
         hamburger.setPrice(type);
         hamburger.setExtraToppings(type);
         hamburger.setToppingCap(3);
+        hamburger.getOverallPrice();
+        this.price += hamburger.getPrice();
+    }
+
+    public void addDeluxeHamburgerPrice() {
         hamburger.getOverallPrice();
         this.price += hamburger.getPrice();
     }

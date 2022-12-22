@@ -37,14 +37,17 @@ public class Drink {
     public void setPrice(String size) {
         switch (size.toLowerCase()) {
             case "small":
+                setSize("small");
                 this.price = 2.5;
                 break;
 
             case "medium":
+                setSize("medium");
                 this.price = 3.4;
                 break;
 
             case "large":
+                setSize("large");
                 this.price = 4.0;
                 break;
 

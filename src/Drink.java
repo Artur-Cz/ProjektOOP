@@ -66,6 +66,10 @@ public class Drink {
         return type;
     }
 
+    public String getSize() {
+        return size;
+    }
+
     public void setType(String type) {
         this.type = type;
     }
@@ -73,23 +77,24 @@ public class Drink {
     public void chooseSize(String type) {
         Scanner scanner = new Scanner(System.in);
         setType(type);
-        System.out.println("Please choose the preferred size:\n\n1. Small\n2. Medium\n3. Large");
+        System.out.println("Please choose the preferred size:\n\n1. Small\n2. Medium\n3. Large\n");
         int input = scanner.nextInt();
         switch (input) {
             case 1:
-                setType("small");
+                setSize("small");
                 break;
 
             case 2:
-                setType("medium");
+                setSize("medium");
                 break;
 
             case 3:
-                setType("large");
+                setSize("large");
                 break;
 
             default:
-                invalidInput(1, 3);
+                invalidInput(0, 4);
+                break;
         }
     }
 
@@ -98,7 +103,7 @@ public class Drink {
         boolean validInput = false;
 
         do {
-            System.out.println("Incorrect option. Please choose option from " + minOption + " to " + maxOption + ".\n");
+            System.out.println("Incorrect option. Please choose option from " + (minOption + 1) + " to " + (maxOption - 1) + ".\n");
             int input = scanner.nextInt();
             if (input > minOption && input < maxOption) {
                 validInput = true;

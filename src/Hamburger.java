@@ -192,7 +192,7 @@ public class Hamburger {
         boolean validInput = false;
 
         do {
-            System.out.println("Incorrect option. Please choose option from " + minOption + " to " + maxOption + ".\n");
+            System.out.println("Incorrect option. Please choose option from " + (minOption + 1) + " to " + (maxOption - 1) + ".\n");
             int input = scanner.nextInt();
             if (input > 0 && input < 8) {
                 validInput = true;

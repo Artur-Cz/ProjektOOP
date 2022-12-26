@@ -66,7 +66,7 @@ public class Order {
                                 break;
 
                             case 2:
-                                addDrinkPrice("cocaCola");
+                                addDrinkPrice("pepsi");
                                 break;
 
                             case 3:
@@ -103,6 +103,7 @@ public class Order {
                                 invalidInput(0, 4);
                                 break;
                         }
+                        break;
 
                     default:
                         invalidInput(0, 5);
@@ -120,24 +121,28 @@ public class Order {
         hamburger.setToppingCap(3);
         hamburger.getOverallPrice();
         this.price += hamburger.getPrice();
+        System.err.println(getPrice());
     }
 
     public void addDeluxeHamburgerPrice() {
         hamburger.getOverallPrice();
         this.price += hamburger.getPrice();
+        System.err.println(getPrice());
     }
 
     public void addDrinkPrice(String type) {
         drink.setType(type);
         drink.chooseSize(drink.getType());
-        drink.setPrice(type);
+        drink.setPrice(drink.getSize());
         this.price += drink.getPrice();
+        System.err.println(getPrice());
     }
 
     public void addSidePrice(String type) {
         side.setType(type);
         side.setPrice(type);
         this.price += side.getPrice();
+        System.err.println(getPrice());
     }
 
     public void invalidInput(int minOption, int maxOption) {
@@ -145,7 +150,7 @@ public class Order {
         boolean validInput = false;
 
         do {
-            System.out.println("Incorrect option. Please choose option from " + minOption + " to " + maxOption + ".\n");
+            System.out.println("Incorrect option. Please choose option from " + (minOption + 1) + " to " + (maxOption - 1) + ".\n");
             int input = scanner.nextInt();
             if (input > minOption && input < maxOption) {
                 validInput = true;

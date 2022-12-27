@@ -31,7 +31,7 @@ public class Order {
             } else {
                 switch (input) {
                     case 1:
-                        System.out.println("Please choose from the following burgers:\n\n1. Cheeseburger\n2. Bacon burger\n3. Deluxe Burger\n4. Basic burger");
+                        System.out.println("Please choose from the following burgers:\n\n1. Cheeseburger\n2. Bacon burger\n3. Deluxe Burger\n4. Basic burger\n");
                         input = scanner.nextInt();
                         switch (input) {
                             case 1:
@@ -58,7 +58,7 @@ public class Order {
                         break;
 
                     case 2:
-                        System.out.println("Please choose from the following drinks:\n\n1. Fanta\n2. Pepsi\n3. Ice Tea\n4. Water");
+                        System.out.println("Please choose from the following drinks:\n\n1. Fanta\n2. Pepsi\n3. Ice Tea\n4. Water\n");
                         input = scanner.nextInt();
                         switch (input) {
                             case 1:
@@ -84,7 +84,7 @@ public class Order {
                         break;
 
                     case 3:
-                        System.out.println("Please choose from the following sides:\n\n1. Apple\n2. Fries\n3. Nuggets;");
+                        System.out.println("Please choose from the following sides:\n\n1. Apple\n2. Fries\n3. Nuggets\n");
                         input = scanner.nextInt();
                         switch (input) {
                             case 1:
@@ -121,13 +121,11 @@ public class Order {
         hamburger.setToppingCap(3);
         hamburger.getOverallPrice();
         this.price += hamburger.getPrice();
-        System.err.println(getPrice());
     }
 
     public void addDeluxeHamburgerPrice() {
         hamburger.getOverallPrice();
         this.price += hamburger.getPrice();
-        System.err.println(getPrice());
     }
 
     public void addDrinkPrice(String type) {
@@ -135,14 +133,12 @@ public class Order {
         drink.chooseSize(drink.getType());
         drink.setPrice(drink.getSize());
         this.price += drink.getPrice();
-        System.err.println(getPrice());
     }
 
     public void addSidePrice(String type) {
         side.setType(type);
         side.setPrice(type);
         this.price += side.getPrice();
-        System.err.println(getPrice());
     }
 
     public void invalidInput(int minOption, int maxOption) {

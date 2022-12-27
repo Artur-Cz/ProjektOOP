@@ -9,27 +9,6 @@ public class Drink {
     public Drink() {
     }
 
-    public Drink(String type, String size) {
-        this.type = type;
-        switch (size.toLowerCase()) {
-            case "small":
-                this.price = 2.5;
-                break;
-
-            case "medium":
-                this.price = 3.4;
-                break;
-
-            case "large":
-                this.price = 4.0;
-                break;
-
-            default:
-                this.price = -0.0;
-                break;
-        }
-    }
-
     public void setSize(String size) {
         this.size = size;
     }

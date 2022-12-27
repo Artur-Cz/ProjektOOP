@@ -10,10 +10,6 @@ public class Hamburger {
     public Hamburger() {
     }
 
-    public Hamburger(String type, double price) {
-        this(type, price, 3);
-    }
-
     public Hamburger(String type, double price, int toppingCap) {
         this.type = type;
         this.price = price;
@@ -99,8 +95,6 @@ public class Hamburger {
         } else {
             System.out.println("Thank you for choosing your option.");
         }
-
-        System.out.println("The price is " + this.price);
     }
 
     protected void getExtraToppings() {
@@ -112,8 +106,8 @@ public class Hamburger {
         if (extraToppings) {
             int counter = 0;
 
-            System.out.println("Please choose one of the following toppings:\n\n1. Extra cheese;\n2. Extra onion;\n" +
-                    "3. Extra pickle;\n4. Extra tomato;\n5. Extra bacon;\n6. Extra lettuce;\n7. Extra egg;\n8. No more toppings.");
+            System.out.println("Please choose one of the following toppings:\n\n1. Extra cheese\n2. Extra onion\n" +
+                    "3. Extra pickle\n4. Extra tomato\n5. Extra bacon\n6. Extra lettuce\n7. Extra egg\n8. No more toppings");
             while (counter < toppingCap) {
                 Scanner scanner = new Scanner(System.in);
 
@@ -121,52 +115,36 @@ public class Hamburger {
 
                 switch (input) {
                     case 1:
-                        this.price += expensiveTopping;
-                        toppingName.append("extra cheese\n");
-                        System.out.println("Please choose a topping.\n");
-                        counter++;
+                        addToppingPrice(expensiveTopping, new StringBuilder("extra cheese\n"));
                         break;
 
                     case 5:
-                        this.price += expensiveTopping;
-                        toppingName.append("extra bacon\n");
-                        System.out.println("Please choose a topping.\n");
-                        counter++;
+                        addToppingPrice(expensiveTopping, new StringBuilder("extra bacon\n"));
                         break;
 
                     case 7:
-                        this.price += expensiveTopping;
-                        toppingName.append("extra egg\n");
-                        System.out.println("Please choose a topping.\n");
+                        addToppingPrice(expensiveTopping, new StringBuilder("extra egg\n"));
                         counter++;
                         break;
 
                     case 2:
-                        this.price += cheapTopping;
-                        toppingName.append("extra onion\n");
-                        System.out.println("Please choose a topping.\n");
+                        addToppingPrice(cheapTopping, new StringBuilder("extra onion\n"));
                         counter++;
                         break;
 
 
                     case 3:
-                        this.price += cheapTopping;
-                        toppingName.append("extra pickle\n");
-                        System.out.println("Please choose a topping.\n");
+                        addToppingPrice(cheapTopping, new StringBuilder("extra pickle\n"));
                         counter++;
                         break;
 
                     case 4:
-                        this.price += mediumTopping;
-                        toppingName.append("extra tomato\n");
-                        System.out.println("Please choose a topping.\n");
+                        addToppingPrice(mediumTopping, new StringBuilder("extra tomato\n"));
                         counter++;
                         break;
 
                     case 6:
-                        this.price += mediumTopping;
-                        toppingName.append("extra lettuce\n");
-                        System.out.println("Please choose a topping.\n");
+                        addToppingPrice(mediumTopping, new StringBuilder("extra lettuce\n"));
                         counter++;
                         break;
 
@@ -198,5 +176,11 @@ public class Hamburger {
                 validInput = true;
             }
         } while (!validInput);
+    }
+
+    public void addToppingPrice(double toppingType, StringBuilder toppingName) {
+        this.price += toppingType;
+        toppingName.append(toppingName);
+        System.out.println("Please choose a topping.\n");
     }
 }
